@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 111111
+    url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8
+  profiles:
+    active: dev
+#    devtools热部署规范
+  thymeleaf:
+    cache: false
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+#运行使用aop
+#  aop:
+#    auto: true
+# 访问jsp配置
+# MyBatis
+#mybatis:
+#    typeAliasesPackage: top.jf.entity
+#    mapperLocations: classpath:mybatis/sqlmap/*.xml
+#    configLocation: classpath:/mybatis-config.xml
+
+
+# LOGGING
+logging:
+    level:
+       com.alibaba.druid.pool.DruidDataSource: error
+       top.jf.mapper: debug

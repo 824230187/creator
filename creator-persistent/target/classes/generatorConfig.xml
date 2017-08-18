@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="my" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="false"/>
+            <!--是否取消全部注释-->
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8" userId="root"
+                        password="111111"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!--定义数据库实体模型-->
+        <javaModelGenerator targetPackage="top.jf.entity"
+                            targetProject="src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+        <!--定义mybatis映射xml文件-->
+        <sqlMapGenerator targetPackage="mybatis.sqlmap"
+                         targetProject="src\main\resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!--定义mapper接口地址-->
+        <javaClientGenerator targetPackage="top.jf.mapper" targetProject="src\main\java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <table tableName="user_test" domainObjectName="UserTest">
+        </table>
+
+        <!--<table tableName="bike_goods" domainObjectName="BikeGoods">
+            &lt;!&ndash;重写数据映射类型&ndash;&gt;
+            &lt;!&ndash;<columnOverride column =“UNSIGNED_BIGINT_FIELD”javaType =“java.lang.Object”jdbcType =“LONG”/>&ndash;&gt;
+        </table>-->
+
+    </context>
+</generatorConfiguration>

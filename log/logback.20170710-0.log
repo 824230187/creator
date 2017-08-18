@@ -1,0 +1,60 @@
+17:39:52:392 SpringBootJpa {main} INFO  top.jf.core.CreatorApplication - Starting CreatorApplication on BF-20161222LEEW with PID 3700 (F:\workspace\creator\creator-core\target\classes started by Administrator in F:\workspace\creator)
+17:39:52:395 SpringBootJpa {main} INFO  top.jf.core.CreatorApplication - The following profiles are active: dev
+17:39:52:475 SpringBootJpa {main} INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7cc0cdad: startup date [Mon Jul 10 17:39:52 CST 2017]; root of context hierarchy
+17:39:52:776 SpringBootJpa {background-preinit} INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+17:39:53:387 SpringBootJpa {main} INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:39:54:195 SpringBootJpa {main} INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8888 (http)
+17:39:54:208 SpringBootJpa {main} INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:39:54:210 SpringBootJpa {main} INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+17:39:54:311 SpringBootJpa {localhost-startStop-1} INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:39:54:312 SpringBootJpa {localhost-startStop-1} INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1837 ms
+17:39:54:426 SpringBootJpa {localhost-startStop-1} INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+17:39:54:429 SpringBootJpa {localhost-startStop-1} INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+17:39:54:430 SpringBootJpa {localhost-startStop-1} INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+17:39:54:430 SpringBootJpa {localhost-startStop-1} INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+17:39:54:430 SpringBootJpa {localhost-startStop-1} INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+17:39:54:481 SpringBootJpa {main} INFO  top.jf.DataBaseConfig - dataSource配置......
+17:39:55:138 SpringBootJpa {main} INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7cc0cdad: startup date [Mon Jul 10 17:39:52 CST 2017]; root of context hierarchy
+17:39:55:280 SpringBootJpa {main} INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:39:55:281 SpringBootJpa {main} INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:39:55:303 SpringBootJpa {main} INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:39:55:303 SpringBootJpa {main} INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:39:55:336 SpringBootJpa {main} INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:39:55:648 SpringBootJpa {main} INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+17:39:55:649 SpringBootJpa {main} INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+17:39:55:652 SpringBootJpa {main} INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+17:39:55:663 SpringBootJpa {main} INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+17:39:55:673 SpringBootJpa {main} INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+17:39:55:682 SpringBootJpa {main} INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:39:55:697 SpringBootJpa {main} INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8888 (http)
+17:39:55:701 SpringBootJpa {main} INFO  top.jf.core.CreatorApplication - Started CreatorApplication in 3.772 seconds (JVM running for 4.089)
+17:43:22:660 SpringBootJpa {main} INFO  top.jf.core.CreatorApplication - Starting CreatorApplication on BF-20161222LEEW with PID 6208 (F:\workspace\creator\creator-core\target\classes started by Administrator in F:\workspace\creator)
+17:43:22:663 SpringBootJpa {main} INFO  top.jf.core.CreatorApplication - The following profiles are active: dev
+17:43:22:733 SpringBootJpa {main} INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4d5d943d: startup date [Mon Jul 10 17:43:22 CST 2017]; root of context hierarchy
+17:43:23:175 SpringBootJpa {background-preinit} INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+17:43:23:581 SpringBootJpa {main} INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:43:24:387 SpringBootJpa {main} INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8888 (http)
+17:43:24:399 SpringBootJpa {main} INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:43:24:400 SpringBootJpa {main} INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+17:43:24:535 SpringBootJpa {localhost-startStop-1} INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:43:24:535 SpringBootJpa {localhost-startStop-1} INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1802 ms
+17:43:24:650 SpringBootJpa {localhost-startStop-1} INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+17:43:24:654 SpringBootJpa {localhost-startStop-1} INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+17:43:24:654 SpringBootJpa {localhost-startStop-1} INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+17:43:24:654 SpringBootJpa {localhost-startStop-1} INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+17:43:24:654 SpringBootJpa {localhost-startStop-1} INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+17:43:24:701 SpringBootJpa {main} INFO  top.jf.DataBaseConfig - dataSource配置......
+17:43:25:353 SpringBootJpa {main} INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4d5d943d: startup date [Mon Jul 10 17:43:22 CST 2017]; root of context hierarchy
+17:43:25:497 SpringBootJpa {main} INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:43:25:497 SpringBootJpa {main} INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:43:25:519 SpringBootJpa {main} INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:43:25:519 SpringBootJpa {main} INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:43:25:555 SpringBootJpa {main} INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:43:25:879 SpringBootJpa {main} INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+17:43:25:880 SpringBootJpa {main} INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+17:43:25:883 SpringBootJpa {main} INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+17:43:25:895 SpringBootJpa {main} INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+17:43:25:906 SpringBootJpa {main} INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+17:43:25:914 SpringBootJpa {main} INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:43:25:933 SpringBootJpa {main} INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8888 (http)
+17:43:25:938 SpringBootJpa {main} INFO  top.jf.core.CreatorApplication - Started CreatorApplication in 3.76 seconds (JVM running for 4.091)

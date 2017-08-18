@@ -1,0 +1,7 @@
+server:
+  port: 8888
+#logging:
+#  file: log.log
+#  level.top.jf.mapper: debug
+
+#  context-path: /index
