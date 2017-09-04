@@ -122,4 +122,35 @@
 		</plugins>
 	</build>
 
+	<repositories>
+		<repository>
+			<id>maven-central</id>
+			<name>maven-central</name>
+			<url>
+				http://39.108.117.188:8081/nexus/content/groups/public/
+			</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
+
+	<!--指定正式版和快照版url及ID引用-->
+	<!--<distributionManagement>
+	  <repository>
+		  <id>admin-release</id>
+		  <name>User Project Release</name>
+		  <url>http://localhost:8081/repository/maven-releases/</url>
+	  </repository>
+
+		<snapshotRepository>
+			<id>admin-snapshots</id>
+			<name>User Project SNAPSHOTS</name>
+			<url>http://localhost:8081/repository/maven-snapshots/</url>
+		 </snapshotRepository>
+	</distributionManagement>-->
+
 </project>
