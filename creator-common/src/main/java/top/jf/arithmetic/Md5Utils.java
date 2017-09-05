@@ -89,5 +89,6 @@ public class Md5Utils {
 		System.out.println (userTest.getPassword ());
 		System.out.println (getMD5LowCase (userTest.getPassword ()));
 		System.out.println ("hahaha");
+		System.out.println ("qwe");
 	}
 }
