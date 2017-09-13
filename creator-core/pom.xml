@@ -17,5 +17,10 @@
             <artifactId>creator-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>top.jf.repository</groupId>
+            <artifactId>creator-web</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

@@ -4,6 +4,8 @@
  */
 package top.jf.controller.demo;
 
+import com.google.gson.Gson;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -15,6 +17,7 @@ import top.jf.demo.result.UserTestResult;
 import top.jf.facade.base.result.SimpleResult;
 import top.jf.facade.exception.BusinessException;
 import top.jf.facade.validation.MyBindingResultUtils;
+import top.jf.http.eneity.UserOrderRequest;
 import top.jf.service.demo.DemoService;
 
 import javax.validation.Valid;
@@ -50,13 +53,24 @@ public class DemoController {
 	}
 	
 	@RequestMapping("/updateUser")
-	public SimpleResult updateUser(@RequestBody @Valid UserTestOrder order, BindingResult bindingResult){
-		MyBindingResultUtils.checkAndReturn (bindingResult);
+	public SimpleResult updateUser(@RequestParam("params") String params){
+//		MyBindingResultUtils.checkAndReturn (bindingResult);
+		Gson gson = new Gson ();
+		UserOrderRequest userOrderRequest = gson.fromJson (params, UserOrderRequest.class);
+		UserTestOrder order = new UserTestOrder ();
+		BeanUtils.copyProperties (userOrderRequest, order);
 		return demoService.updateUser (order);
 	}
 	
 	@RequestMapping("/test/exception")
 	public SimpleResult testException(){
 		throw new BusinessException ("自定义业务层异常");
+	}
+	
+	@RequestMapping("/test/json")
+	public SimpleResult testJson(@RequestParam("params") String params){
+		SimpleResult result = new SimpleResult ();
+		result.setToSuccess (params);
+		return result;
 	}
 }

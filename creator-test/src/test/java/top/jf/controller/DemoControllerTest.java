@@ -5,28 +5,20 @@
 package top.jf.controller;
 
 
-import com.google.common.base.Preconditions;
-import net.minidev.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.util.Assert;
 import org.springframework.web.context.WebApplicationContext;
 import top.jf.BaseTest;
 import top.jf.ControllerTestUtils;
 import top.jf.core.CreatorApplication;
 
 import java.util.*;
-import java.util.function.BiConsumer;
 
 /**
  * Created by IntelliJ IDEA
@@ -60,8 +52,8 @@ public class DemoControllerTest extends BaseTest{
 	 * */
 	@Test
 	public void test() throws Exception{
-		System.out.println (controllerTestUtils.getResponseContentWithOutParam (mockMvc,"/demo/test/exception"));
-//		System.out.println (controllerTestUtils.getResponseContentWithOutParam (mockMvc,"/demo/queryAll"));
+//		System.out.println (controllerTestUtils.getResponseContentWithOutParam (mockMvc,"/demo/test/exception"));
+		System.out.println (controllerTestUtils.getResponseContentWithOutParam (mockMvc,"/demo/queryAll"));
 	}
 	
 	/**

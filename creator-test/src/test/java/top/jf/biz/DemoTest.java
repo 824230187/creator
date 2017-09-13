@@ -1,5 +1,6 @@
 package top.jf.biz;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -9,10 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import top.jf.BaseTest;
 import top.jf.core.CreatorApplication;
-import top.jf.demo.info.UserTestInfo;
-import top.jf.demo.order.UserTestOrder;
-import top.jf.entity.UserTest;
-import top.jf.facade.base.result.SimpleResult;
 import top.jf.service.demo.DemoService;
 
 
@@ -53,7 +50,8 @@ public class DemoTest extends BaseTest{
     }
 	
 	public static void main (String[] args) {
-		
+		String randomNumeric = RandomStringUtils.randomNumeric (6);
+		System.out.println (randomNumeric);
 	}
 
 }

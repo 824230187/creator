@@ -31,9 +31,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @date 2017/7/10
  * @time 14:35
  */
-@Configuration
+/*@Configuration
 @EnableTransactionManagement
-@MapperScan("top.*.mapper")
+@MapperScan("top.*.mapper")*/
+//已作废
 public class DataBaseConfig implements EnvironmentAware{
 
 	/**
