@@ -1,7 +1,13 @@
 server:
   port: 8888
+
 #logging:
 #  file: log.log
 #  level.top.jf.mapper: debug
-
 #  context-path: /index
+
+# 梦网短信平台相关配置
+mw_sms_ip: 61.145.229.26
+mw_sms_port: 8086
+mw_sms_userid: J25678
+mw_sms_pwd: 856333
