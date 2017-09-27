@@ -73,4 +73,9 @@ public class DemoController {
 		result.setToSuccess (params);
 		return result;
 	}
+	
+	@GetMapping("/test/str")
+	public String testStr(){
+		return "str";
+	}
 }

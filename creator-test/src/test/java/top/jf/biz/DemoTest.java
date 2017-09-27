@@ -10,8 +10,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import top.jf.BaseTest;
 import top.jf.core.CreatorApplication;
+import top.jf.demo.order.SendSmsOrder;
+import top.jf.facade.enums.SendSmsEnum;
 import top.jf.service.demo.DemoService;
+import top.jf.service.sms.MwSendSmsService;
 
+import java.net.Inet4Address;
 
 
 /**
@@ -29,12 +33,18 @@ public class DemoTest extends BaseTest{
 
     @Autowired
     private DemoService demoService;
+    
+    @Autowired
+    private MwSendSmsService mwSendSmsService;
+    
+    private static final Integer testInteger = 1;
 
 	private final Logger logger = LoggerFactory.getLogger (DemoTest.class);
 
     @Test
     public void test(){
     	System.out.println (demoService.queryAll ());
+    	
 	    /*try {
 		    System.out.println (demoService.selectById (1));
 	    } catch (Exception e) {
@@ -48,10 +58,40 @@ public class DemoTest extends BaseTest{
 //	    order.setPassword ("root");
 //	    System.out.println (demoService.updateUser (order));
     }
+    
+    @Test
+    public void httpTest(){
+	    SendSmsOrder order = new SendSmsOrder ();
+	    order.setPhoneNum ("15923076029");
+//	    order.setOrderNo ("DD585");
+	    order.setSendSmsEnum (SendSmsEnum.VERIFICATION_CODE);
+	    System.out.println (mwSendSmsService.sendSms (order));
+    }
 	
-	public static void main (String[] args) {
-		String randomNumeric = RandomStringUtils.randomNumeric (6);
-		System.out.println (randomNumeric);
-	}
+    public static void main (String[] args) {
+//		String randomNumeric = RandomStringUtils.randomNumeric (6);
+//		System.out.println (randomNumeric);
+        /*int i = 11;
+        do {
+	        System.out.print ("z");
+	        i--;
+        }while (i>7);
+        
+        long num =100L;
+        
+        float f = num;
+        
+        float f2 = 100F;
+        
+        long l2 = (long)f2;*/
+        
+        /*int [] [] arr = {{1,2},{1},{4,5,6},{}};
+	
+	    System.out.println (arr[0].length);
+	    System.out.println ("7117102755926884276".length ());*/
+        String str = "您的手机验证码为:#code,请及时输入!";
+	    System.out.println (str.replace ("#code", RandomStringUtils.randomNumeric (6)));
+    }
+	
 
 }

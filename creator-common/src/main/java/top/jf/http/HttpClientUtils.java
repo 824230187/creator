@@ -5,6 +5,7 @@
 package top.jf.http;
 
 import okhttp3.*;
+import org.apache.commons.lang.StringUtils;
 import org.apache.coyote.http2.ConnectionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,7 +63,9 @@ public class HttpClientUtils {
 	public String doPostMap(String url, Map<String, String> map){
 		FormBody.Builder builder = new FormBody.Builder ();
 		for (Map.Entry<String, String> data : map.entrySet ()) {
-			builder.add (data.getKey (), data.getValue ());
+			if(!StringUtils.isEmpty (data.getValue ())){
+				builder.add (data.getKey (), data.getValue ());
+			}
 		}
 		
 		RequestBody requestBody = builder.build ();
