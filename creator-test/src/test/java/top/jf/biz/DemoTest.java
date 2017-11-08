@@ -91,6 +91,10 @@ public class DemoTest extends BaseTest{
 	    System.out.println ("7117102755926884276".length ());*/
         String str = "您的手机验证码为:#code,请及时输入!";
 	    System.out.println (str.replace ("#code", RandomStringUtils.randomNumeric (6)));
+	    int [] arr = {1,2,3,5,6,7,8,9,0};
+	    
+	    
+	    
     }
 	
 

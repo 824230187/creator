@@ -11,6 +11,8 @@
 
     <artifactId>creator-utils</artifactId>
 
+
+
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -42,6 +44,19 @@
             <version>3.3.0</version>
         </dependency>
 
+        <!--sb项目支持jsp使用-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <version>8.5.20</version>
+        </dependency>
+
+        <!--mybatis分页插件-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>4.1.1</version>
+        </dependency>
     </dependencies>
 
 </project>

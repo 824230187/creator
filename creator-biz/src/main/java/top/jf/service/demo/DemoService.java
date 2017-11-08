@@ -4,13 +4,19 @@
  */
 package top.jf.service.demo;
 
+import com.alibaba.druid.support.json.JSONUtils;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.google.common.base.Preconditions;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestParam;
 import top.jf.demo.api.DemoApi;
 import top.jf.demo.info.UserTestInfo;
 import top.jf.demo.order.UserTestOrder;
@@ -41,9 +47,9 @@ public class DemoService implements DemoApi{
 	private UserTestMapper userTestMapper;
 	
 	public UserTestResult queryAll(){
-		List<UserTest> list = userTestMapper.selectByExample (new UserTestExample ());
 		List<UserTestInfo> userTestInfos = new ArrayList<> ();
 		UserTestResult result = new UserTestResult ();
+		List<UserTest> list = userTestMapper.selectByExample (new UserTestExample ());
 		
 		for(UserTest data:list){
 			UserTestInfo info = new UserTestInfo ();
@@ -80,6 +86,29 @@ public class DemoService implements DemoApi{
 		//验证不通过，抛出异常，并由全局异常处理器统一处理异常
 		Preconditions.checkArgument (flag==1,"更新数据失败！请检查sql语句");
 		result.setToSuccess ("更新成功！");
+		return result;
+	}
+	
+	public UserTestResult queryByPage(Integer sex, Integer pageNum, Integer pageSize){
+		UserTestResult result = new UserTestResult ();
+		UserTestExample ex = new UserTestExample ();
+		ex.or ().andSexEqualTo (sex);
+		
+		PageHelper.startPage (pageNum,pageSize);
+		List<UserTestInfo> userTestInfos = new ArrayList<> ();
+		List<UserTest> list = userTestMapper.selectByExample (ex);
+		Page<UserTest> page = (Page<UserTest>) list;
+		
+		if(!CollectionUtils.isEmpty (list)){
+			for(UserTest data : list){
+				UserTestInfo info = new UserTestInfo ();
+				BeanUtils.copyProperties (data, info);
+				userTestInfos.add (info);
+			}
+		}
+		result.setInfoList (userTestInfos);
+		result.setCount (page.getTotal ());
+		result.setToSuccess ("查询成功!");
 		return result;
 	}
 }

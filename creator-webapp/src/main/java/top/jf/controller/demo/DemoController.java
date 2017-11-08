@@ -4,6 +4,8 @@
  */
 package top.jf.controller.demo;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.google.gson.Gson;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.BindingResultUtils;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import top.jf.demo.info.UserTestInfo;
 import top.jf.demo.order.UserTestOrder;
 import top.jf.demo.result.UserTestResult;
 import top.jf.facade.base.result.SimpleResult;
@@ -22,6 +26,7 @@ import top.jf.service.demo.DemoService;
 
 import javax.validation.Valid;
 import javax.websocket.server.PathParam;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA
@@ -42,12 +47,24 @@ public class DemoController {
 	
 	@RequestMapping("/queryUser")
 //	@ResponseBody
+	//在使用@RequestMapping后，返回值通常解析为跳转路径，加上@responsebody后返回结果不会被解析为跳转路径，
+	// 而是直接写入HTTP response body中。比如异步获取json数据，加上@responsebody后，会直接返回json数据。
 	public UserTestResult queryUserById(@RequestParam("id") Integer id, @RequestParam("username") String username){
 		UserTestResult result = demoService.selectById (id, username);
 		return result;
 	}
 	
+	@RequestMapping("/queryByPage")
+	public UserTestResult queryByPage(@RequestParam("sex") Integer sex,
+	                                  @RequestParam("pageNum") Integer pageNum,
+	                                  @RequestParam("pageSize") Integer pageSize){
+		UserTestResult result = demoService.queryByPage (sex, pageNum, pageSize);
+		return result;
+	}
+	
+	
 	@RequestMapping("/queryAll")
+//	@ResponseBody
 	public UserTestResult queryAll(){
 		return demoService.queryAll ();
 	}
@@ -74,8 +91,9 @@ public class DemoController {
 		return result;
 	}
 	
-	@GetMapping("/test/str")
-	public String testStr(){
-		return "str";
+	@GetMapping("/index")
+	public ModelAndView testStr(){
+		ModelAndView mv = new ModelAndView ("index");
+		return mv;
 	}
 }

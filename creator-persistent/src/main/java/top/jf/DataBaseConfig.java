@@ -4,6 +4,8 @@ package top.jf;/*
  */
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.github.pagehelper.PageHelper;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -20,6 +22,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import java.util.Properties;
 
 
 /**
@@ -31,9 +34,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @date 2017/7/10
  * @time 14:35
  */
-/*@Configuration
+@Configuration
 @EnableTransactionManagement
-@MapperScan("top.*.mapper")*/
+@MapperScan("top.*.mapper")
 //已作废
 public class DataBaseConfig implements EnvironmentAware{
 
@@ -79,6 +82,7 @@ public class DataBaseConfig implements EnvironmentAware{
 	}
 	
 	@Bean
+	@Primary
 	public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
 		
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
@@ -87,7 +91,25 @@ public class DataBaseConfig implements EnvironmentAware{
 		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 		sqlSessionFactoryBean.setMapperLocations
 				(resolver.getResources("classpath:mybatis/sqlmap/*.xml"));
+		
+		//添加分页插件
+		PageHelper pageHelper = pageHelper ();
+		Interceptor[] plugins = new Interceptor[]{pageHelper};
+		sqlSessionFactoryBean.setPlugins(plugins);
 		return sqlSessionFactoryBean.getObject();
+	}
+	
+	@Bean
+	public PageHelper pageHelper() {
+		PageHelper pageHelper = new PageHelper();
+		Properties p = new Properties();
+		p.setProperty ("rowBoundsWithCount", "true");
+		p.setProperty ("reasonable", "false");
+		p.setProperty ("autoDialect","true");
+		p.setProperty ("dialect","mysql");
+		
+		pageHelper.setProperties(p);
+		return pageHelper;
 	}
 	
 	

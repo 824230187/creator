@@ -15,8 +15,14 @@ spring:
     cache: false
   mvc:
     view:
-      prefix: /WEB-INF/jsp/
+      prefix: /static/
       suffix: .jsp
+# 自定义访问静态资源路径
+    resources:
+      static-locations: classpath:/static/
+
+
+
 #运行使用aop
 #  aop:
 #    auto: true
@@ -65,3 +71,5 @@ logging:
        top.jf.mapper: debug
 # Spring Boot启动时将自动配置的信息通过DEBUG级别的日志打印到控制台
 debug: true
+
+

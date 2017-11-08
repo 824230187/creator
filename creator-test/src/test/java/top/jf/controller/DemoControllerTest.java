@@ -62,9 +62,10 @@ public class DemoControllerTest extends BaseTest{
 	@Test
 	public void test2() throws Exception{
 		Map<String, String> m1 = new HashMap<> ();
-		m1.put("id","1");
-		m1.put ("username","aaaaaaa");
-		System.out.println (controllerTestUtils.getParamOfResponseContent (mockMvc, m1, "/demo/queryUser"));
+		m1.put ("sex","1");
+		m1.put ("pageNum","1");
+		m1.put ("pageSize","10");
+		System.out.println (controllerTestUtils.getParamOfResponseContent (mockMvc, m1, "/demo/queryByPage"));
 		
 	}
 	
