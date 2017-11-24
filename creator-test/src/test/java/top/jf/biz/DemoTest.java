@@ -8,14 +8,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import sun.security.util.AuthResources_it;
 import top.jf.BaseTest;
 import top.jf.core.CreatorApplication;
 import top.jf.demo.order.SendSmsOrder;
+import top.jf.demo.result.SensitiveWordResult;
+import top.jf.entity.KeyWord;
+import top.jf.facade.base.result.SimpleResult;
 import top.jf.facade.enums.SendSmsEnum;
 import top.jf.service.demo.DemoService;
+import top.jf.service.sensitiveWord.SensitivewordService;
 import top.jf.service.sms.MwSendSmsService;
 
 import java.net.Inet4Address;
+import java.util.List;
 
 
 /**
@@ -36,6 +42,9 @@ public class DemoTest extends BaseTest{
     
     @Autowired
     private MwSendSmsService mwSendSmsService;
+    
+    @Autowired
+    private SensitivewordService sensitivewordService;
     
     private static final Integer testInteger = 1;
 
@@ -67,7 +76,28 @@ public class DemoTest extends BaseTest{
 	    order.setSendSmsEnum (SendSmsEnum.VERIFICATION_CODE);
 	    System.out.println (mwSendSmsService.sendSms (order));
     }
+    
+    
+    @Test
+    public void sensitiveWordInsertTest(){
+	    SimpleResult result = sensitivewordService.batchInsert ("1,2");
+	    System.out.println (result);
+    }
 	
+	@Test
+	public void sensitiveWordDelTest(){
+		SimpleResult result = sensitivewordService.batchDelete ("1,2");
+		System.out.println (result);
+	}
+	
+	@Test
+	public void sensitiveWordTest(){
+//		SensitiveWordResult all = sensitivewordService.findAll ();
+		String str = sensitivewordService.replaceSensitiveWord ("芽儿哦", "*");
+		System.out.println (str);
+	}
+	
+    
     public static void main (String[] args) {
 //		String randomNumeric = RandomStringUtils.randomNumeric (6);
 //		System.out.println (randomNumeric);

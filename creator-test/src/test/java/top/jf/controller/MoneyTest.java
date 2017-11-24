@@ -4,12 +4,12 @@
  */
 package top.jf.controller;
 
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.ListUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.accessibility.AccessibleHyperlink;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA
@@ -59,21 +59,14 @@ public class MoneyTest {
 	
 	
 	public static void main (String[] args) {
-		/*String money = moneyFormat ("70005");
-		System.out.println (money);*/
 		List<String> list = new ArrayList<> ();
 		list.add ("1");
 		list.add ("2");
+		list.add ("3");
+		list.add ("4");
+		list.add ("1");
+		Set<String> set = new HashSet<> (list);
 		
-		Iterator<String> iterator = list.iterator ();
-		while (iterator.hasNext ()){
-			String str = iterator.next ();
-			if("1".equals (str)){
-				iterator.remove ();
-			}
-		}
-		System.out.println (list.toString ());
-		
-		
+		System.out.println (set);
 	}
 }

@@ -64,7 +64,7 @@ public class DemoControllerTest extends BaseTest{
 		Map<String, String> m1 = new HashMap<> ();
 		m1.put ("sex","1");
 		m1.put ("pageNum","1");
-		m1.put ("pageSize","10");
+		m1.put ("pageSize","2");
 		System.out.println (controllerTestUtils.getParamOfResponseContent (mockMvc, m1, "/demo/queryByPage"));
 		
 	}

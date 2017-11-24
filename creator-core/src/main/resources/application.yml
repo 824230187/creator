@@ -11,8 +11,8 @@ spring:
   devtools:
     restart:
       enabled: false
-  thymeleaf:
-    cache: false
+#  thymeleaf:
+#    cache: false
   mvc:
     view:
       prefix: /static/
