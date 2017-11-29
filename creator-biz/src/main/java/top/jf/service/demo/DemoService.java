@@ -4,21 +4,18 @@
  */
 package top.jf.service.demo;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.google.common.base.Preconditions;
-import org.apache.ibatis.session.RowBounds;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.ObjectUtils;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestParam;
 import top.jf.demo.api.DemoApi;
 import top.jf.demo.info.UserTestInfo;
+import top.jf.demo.order.SimpleUserOrder;
 import top.jf.demo.order.UserTestOrder;
 import top.jf.demo.result.UserTestResult;
 import top.jf.entity.UserTest;
@@ -27,7 +24,6 @@ import top.jf.facade.base.result.SimpleResult;
 import top.jf.facade.enums.CommonCode;
 import top.jf.mapper.UserTestMapper;
 
-import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +41,9 @@ public class DemoService implements DemoApi{
 	
 	@Autowired
 	private UserTestMapper userTestMapper;
+	
+	
+	private static final Logger logger = LoggerFactory.getLogger (DemoService.class);
 	
 	public UserTestResult queryAll(){
 		List<UserTestInfo> userTestInfos = new ArrayList<> ();
@@ -111,4 +110,24 @@ public class DemoService implements DemoApi{
 		result.setToSuccess ("查询成功!");
 		return result;
 	}
+	
+	
+	/*public SimpleResult insertNewData (SimpleUserOrder order) {
+		SimpleResult result = new SimpleResult ();
+		UserTest userTest = new UserTest ();
+		BeanUtils.copyProperties (order, userTest);
+		
+		//自定义序列名生成全局唯一ID
+		userTest.setId (Integer.parseInt (extraMapper.newId ("my_seq","001")));
+		try {
+			userTestMapper.insert (userTest);
+		} catch (Exception e) {
+			logger.error ("插入数据失败");
+			result.setToFail (CommonCode.BIZ_EXCEPRION, "插入数据失败");
+			return result;
+		}
+		
+		result.setToSuccess ("新增用户成功！");
+		return result;
+	}*/
 }

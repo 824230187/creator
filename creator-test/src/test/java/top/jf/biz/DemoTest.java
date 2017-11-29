@@ -1,6 +1,6 @@
 package top.jf.biz;
 
-import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -8,19 +8,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import sun.security.util.AuthResources_it;
 import top.jf.BaseTest;
 import top.jf.core.CreatorApplication;
-import top.jf.demo.order.SendSmsOrder;
-import top.jf.demo.result.SensitiveWordResult;
-import top.jf.entity.KeyWord;
+import top.jf.demo.order.SimpleUserOrder;
+import top.jf.entity.UserTest;
 import top.jf.facade.base.result.SimpleResult;
-import top.jf.facade.enums.SendSmsEnum;
+import top.jf.http.HttpClientUtils;
 import top.jf.service.demo.DemoService;
 import top.jf.service.sensitiveWord.SensitivewordService;
 import top.jf.service.sms.MwSendSmsService;
 
-import java.net.Inet4Address;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -70,12 +68,17 @@ public class DemoTest extends BaseTest{
     
     @Test
     public void httpTest(){
-	    SendSmsOrder order = new SendSmsOrder ();
-	    order.setPhoneNum ("15923076029");
+//	    SendSmsOrder order = new SendSmsOrder ();
+//	    order.setPhoneNum ("15923076029");
 //	    order.setOrderNo ("DD585");
-	    order.setSendSmsEnum (SendSmsEnum.VERIFICATION_CODE);
-	    System.out.println (mwSendSmsService.sendSms (order));
+//	    order.setSendSmsEnum (SendSmsEnum.VERIFICATION_CODE);
+//	    System.out.println (mwSendSmsService.sendSms (order));
+	    HttpClientUtils httpClientUtils = new HttpClientUtils ();
+	
+	    String s = httpClientUtils.doGet ("https://test.kxg99.com/goods/recharge/CashNotify");
+	    System.out.println (s);
     }
+    
     
     
     @Test
@@ -96,6 +99,16 @@ public class DemoTest extends BaseTest{
 		String str = sensitivewordService.replaceSensitiveWord ("芽儿哦", "*");
 		System.out.println (str);
 	}
+	
+	/*@Test
+	public void InsertUserTest(){
+		SimpleUserOrder order = new SimpleUserOrder ();
+		order.setUsername ("824230187");
+		order.setPassword ("jf123456");
+		order.setSex (1);
+//		System.out.println (extraMapper.getSysdate ());
+		System.out.println (demoService.insertNewData (order));
+	}*/
 	
     
     public static void main (String[] args) {
@@ -119,12 +132,19 @@ public class DemoTest extends BaseTest{
 	
 	    System.out.println (arr[0].length);
 	    System.out.println ("7117102755926884276".length ());*/
-        String str = "您的手机验证码为:#code,请及时输入!";
+        /*String str = "您的手机验证码为:#code,请及时输入!";
 	    System.out.println (str.replace ("#code", RandomStringUtils.randomNumeric (6)));
-	    int [] arr = {1,2,3,5,6,7,8,9,0};
+	    int [] arr = {1,2,3,5,6,7,8,9,0};*/
 	    
-	    
-	    
+       /* List<UserTest> list = new ArrayList<> ();
+        UserTest userTest1 = new UserTest ();
+        userTest1.setUsername ("liujianfu");
+        UserTest userTest2 = new UserTest ();
+        list.add (userTest1);
+	    list.add (userTest2);
+	    System.out.println (list);
+	    list.remove (userTest1);
+	    System.out.println (list);*/
     }
 	
 
