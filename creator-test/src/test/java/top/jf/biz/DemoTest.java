@@ -18,6 +18,7 @@ import top.jf.service.demo.DemoService;
 import top.jf.service.sensitiveWord.SensitivewordService;
 import top.jf.service.sms.MwSendSmsService;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -145,6 +146,10 @@ public class DemoTest extends BaseTest{
 	    System.out.println (list);
 	    list.remove (userTest1);
 	    System.out.println (list);*/
+	
+	    BigDecimal b1 = new BigDecimal ("1200.00");
+	    BigDecimal b2 = new BigDecimal ("44444.00");
+	    System.out.println (b1.divide (b2,2));
     }
 	
 
