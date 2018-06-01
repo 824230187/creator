@@ -11,11 +11,7 @@
 
     <artifactId>creator-test</artifactId>
     <dependencies>
-        <dependency>
-            <groupId>top.jf.repository</groupId>
-            <artifactId>creator-core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
 
         <dependency>
             <groupId>top.jf.repository</groupId>
