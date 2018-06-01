@@ -137,7 +137,7 @@
 		</plugins>
 	</build>
 
-	<repositories>
+	<!--<repositories>
 		<repository>
 			<id>maven-central</id>
 			<name>maven-central</name>
@@ -151,7 +151,7 @@
 				<enabled>true</enabled>
 			</releases>
 		</repository>
-	</repositories>
+	</repositories>-->
 
 	<!--指定正式版和快照版url及ID引用-->
 	<!--<distributionManagement>
@@ -167,5 +167,31 @@
 			<url>http://localhost:8081/repository/maven-snapshots/</url>
 		 </snapshotRepository>
 	</distributionManagement>-->
+	<!--配置maven私服中央仓库-->
+	<repositories>
+		<repository>
+			<id>maven-central</id>
+			<name>maven-central</name>
+			<url>http://192.168.0.146:8081/repository/maven-central/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
 
+	<distributionManagement>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Nexus Snapshots</name>
+			<url>http://192.168.0.146:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<site>
+			<id>releases</id>
+			<name>Nexus Releases</name>
+			<url>http://192.168.0.146:8081/repository/maven-releases/</url>
+		</site>
+	</distributionManagement>
 </project>

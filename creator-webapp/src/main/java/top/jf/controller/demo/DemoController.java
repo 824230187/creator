@@ -91,9 +91,8 @@ public class DemoController {
 		return result;
 	}
 	
-	@GetMapping("/index")
-	public ModelAndView testStr(){
-		ModelAndView mv = new ModelAndView ("index");
-		return mv;
+	@GetMapping("/h")
+	public String testStr(){
+		return "index";
 	}
 }

@@ -70,6 +70,6 @@ logging:
        com.alibaba.druid.pool.DruidDataSource: error
        top.jf.mapper: debug
 # Spring Boot启动时将自动配置的信息通过DEBUG级别的日志打印到控制台
-debug: true
+debug: false
 
 
