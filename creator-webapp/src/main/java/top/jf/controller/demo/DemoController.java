@@ -93,6 +93,6 @@ public class DemoController {
 	
 	@GetMapping("/h")
 	public String testStr(){
-		return "index";
+		return "lalalala";
 	}
 }
