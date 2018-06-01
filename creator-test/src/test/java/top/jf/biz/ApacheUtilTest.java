@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import top.jf.core.CreatorApplication;
+//import top.jf.core.CreatorApplication;
 import top.jf.entity.UserTest;
 
 import java.util.*;
@@ -24,7 +24,7 @@ import java.util.*;
  * @time 11:53
  */
 @RunWith (SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = CreatorApplication.class)
+//@SpringBootTest(classes = CreatorApplication.class)
 public class ApacheUtilTest {
 	
 	@Test

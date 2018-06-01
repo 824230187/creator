@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import top.jf.BaseTest;
 import top.jf.ControllerTestUtils;
-import top.jf.core.CreatorApplication;
+//import top.jf.core.CreatorApplication;
 
 import java.util.*;
 
@@ -30,7 +30,7 @@ import java.util.*;
  * @time 16:01
  */
 @RunWith (SpringRunner.class)
-@SpringBootTest(classes = CreatorApplication.class)
+//@SpringBootTest(classes = CreatorApplication.class)
 public class DemoControllerTest extends BaseTest{
 	
 	@Autowired

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import top.jf.BaseTest;
-import top.jf.core.CreatorApplication;
+//import top.jf.core.CreatorApplication;
 import top.jf.demo.order.SimpleUserOrder;
 import top.jf.entity.UserTest;
 import top.jf.facade.base.result.SimpleResult;
@@ -33,7 +33,7 @@ import java.util.List;
  * @time 10:37
  */
 @RunWith (SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = CreatorApplication.class)
+//@SpringBootTest(classes = CreatorApplication.class)
 public class DemoTest extends BaseTest{
 
     @Autowired
